@@ -1,0 +1,9 @@
+% bibentry template for lsst.bib in https://github.com/lsst/lsst-texmf/blob/master/texmf/bibtex/bib/lsst.bib
+
+@DocuShare{RTN-020,
+   author = { Russ Allbery },
+    title = {Infrastructure security design for the IDF},
+     year = 2021,
+    month = Jun,
+   handle = {RTN-020},
+      url = {https://rtn-020.lsst.io } }
