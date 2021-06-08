@@ -37,14 +37,21 @@ authors:
 copyright: "2021, Association of Universities for Research in Astronomy, Inc. (AURA)"
 
 # Description. A short, 1-2 sentence statemement used by document indices.
-description: "Documents the design for identity, authentication, and authorization for access to the Google infrastructure services used to host the Interim Data Facility."
+description: >-
+  Documents the design for identity, authentication, and authorization for
+  access to the Google infrastructure services used to host the Interim Data
+  Facility.
 
 # Abstract, if available
-# abstract: >
-#           Write your paragraph
-#           here with multiple lines.
-#
-#           You can have multiple paragraphs too.
+abstract: >-
+  The Interim Data Facility (IDF) is hosted at Google using Google Cloud
+  Platform (GCP). Administrators of the IDF must be able to authenticate to
+  the Google infrastructure to debug problems and must have a mechanism to
+  make changes to the IDF configuration. This document outlines the identity,
+  authentication, and authorization model used for the IDF and discusses the
+  security goals that it is intended to address. It also discusses some
+  non-default configuration options for the GCP organization that are set for
+  security reasons.
 
 # URL where this document is published by Read the Docs. e.g. http://sqr-001.lsst.codes
 url: "https://rtn-020.lsst.io"
