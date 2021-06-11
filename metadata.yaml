@@ -13,7 +13,7 @@ serial_number: "020"
 doc_id: "RTN-020"
 
 # Title of the document, without the series/serial designation
-doc_title: "Infrastructure security design for the IDF"
+doc_title: "Security controls for adminstrative and developer access to IDF infrastructure"
 
 # Author names, ordered as a list. Each author name should be formatted as 'First Last'
 authors:
@@ -38,7 +38,7 @@ copyright: "2021, Association of Universities for Research in Astronomy, Inc. (A
 
 # Description. A short, 1-2 sentence statemement used by document indices.
 description: >-
-  Documents the design for identity, authentication, and authorization for
+  Describes the model for identity, authentication, and authorization for
   access to the Google infrastructure services used to host the Interim Data
   Facility.
 
