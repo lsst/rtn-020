@@ -7,9 +7,13 @@ Abstract
 
 The Interim Data Facility (IDF) is hosted at Google using Google Cloud Platform (GCP).
 Administrators of the IDF must be able to authenticate to the Google infrastructure to debug problems and must have a mechanism to make changes to the IDF configuration.
-This document outlines the identity, authentication, and authorization model used for the IDF and discusses the security goals that it is intended to address.
+This document outlines the identity, authentication, and authorization model used for the IDF infrastructure and discusses the security goals that it is intended to address.
 It also discusses some non-default configuration options for the GCP organization that are set for security reasons.
-Note that this document specifically deals with authentication to the Google infrastructure, which by policy is limited to Rubin Operations staff that are developing and supporting services deployed on the IDF. It does not pertain to users of these services from our scientific community, who do not have infrastructure accounts, but authenticate through our service layer. 
+
+Note that this document only addresses authentication to the Google infrastructure, which by policy is limited to Rubin Operations staff who are developing and supporting services deployed on the IDF.
+It does not pertain to users of these services from our scientific community, who do not have infrastructure accounts but instead authenticate through our service layer.
+That authentication model will be documented separately.
+
 This document is heavily based on *Rubin Observatory GCP Onboarding* written by Burwood Group, Inc., for Rubin Observatory.
 It summarizes the configuration information for identity, authentication, authorization, and security configuration from that document, with modifications for subsequent configuration changes.
 
