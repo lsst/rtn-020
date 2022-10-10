@@ -10,9 +10,11 @@ Administrators of the IDF must be able to authenticate to the Google infrastruct
 This document outlines the identity, authentication, and authorization model used for the IDF infrastructure and discusses the security goals that it is intended to address.
 It also discusses some non-default configuration options for the GCP organization that are set for security reasons.
 
-Note that this document only addresses authentication to the Google infrastructure, which by policy is limited to Rubin Operations staff who are developing and supporting services deployed on the IDF.
+This document only addresses authentication to the Google infrastructure, which by policy is limited to Rubin Operations staff who are developing and supporting services deployed on the IDF.
 It does not pertain to users of these services from our scientific community, who do not have infrastructure accounts but instead authenticate through our service layer.
-That authentication model will be documented separately.
+That authentication model is documented in DMTN-234_ and its companion documents.
+
+.. _DMTN-234: https://dmtn-234.lsst.io/
 
 This document is heavily based on *Rubin Observatory GCP Onboarding* written by Burwood Group, Inc., for Rubin Observatory.
 It summarizes the configuration information for identity, authentication, authorization, and security configuration from that document, with modifications for subsequent configuration changes.
@@ -131,8 +133,10 @@ Databases
 Public IP access to Cloud SQL instances is disabled by organization policy to prevent accidentally exposing Cloud SQL instances to the public Internet.
 
 As a general rule, access to Cloud SQL instances should use the `Google Cloud SQL Auth Proxy <https://cloud.google.com/sql/docs/postgres/sql-proxy>`__.
-For Kubernetes services, this should run as a sidecar container using a Kubernetes service account that is bound to an IAM service account with the appropriate IAM roles to connect to the Cloud SQL instance.
-If a particular use case cannot use the Cloud SQL Auth Proxy, it can get an exception to allow direct connection to the database, but it should still be via private IP, not public IP.
+For Kubernetes services, this should run as either a sidecar container or as a separate service, normally within the same namespace.
+The Google Cloud SQL Auth Proxy should use a Kubernetes service account that is bound to an IAM service account with the appropriate IAM roles to connect to the Cloud SQL instance.
+
+If a particular use case cannot use the Cloud SQL Auth Proxy, it can get an exception to allow direct connection to the database, but it should still connect via private IP, not public IP.
 
 Be aware that the Cloud SQL Auth Proxy does not replace database authentication.
 The Cloud SQL instance will still need configured users with passwords, and those passwords will have to be shared with the services that use that instance.
